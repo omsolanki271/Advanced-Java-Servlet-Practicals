@@ -1,0 +1,55 @@
+package com.aoot.http.cal;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+//@WebServlet("/Substraction")
+public class Substraction extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+    public Substraction() {
+        super();
+
+    }
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		
+		int num1 = Integer.parseInt(request.getParameter("no1"));
+		int num2 = Integer.parseInt(request.getParameter("no2"));
+		
+	
+		
+		ServletConfig config = getServletConfig();
+		
+		String pronm = config.getInitParameter("value");
+		String 
+		
+		
+		int res = num1 + num2 + Integer.parseInt(pronm);
+		
+		out.println(res);
+		
+		//out.println(pronm);
+		
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,37 @@
+package com.aoot.generic;
+
+import java.io.IOException;
+import javax.servlet.GenericServlet;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet("/Program1")
+public class Program1 extends GenericServlet {
+	private static final long serialVersionUID = 1L;
+       
+
+    public Program1() {
+        super();
+    }
+
+
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("Servlet initialization...");
+	}
+
+	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+	
+		
+	}
+	
+	public void destroy() {
+		System.out.println("Servlet destroyed");
+	}
+
+
+	
+
+}
