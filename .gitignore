@@ -1,0 +1,6 @@
+.metadata/
+Servers/
+build/
+*.class
+*.log
+.DS_Store
