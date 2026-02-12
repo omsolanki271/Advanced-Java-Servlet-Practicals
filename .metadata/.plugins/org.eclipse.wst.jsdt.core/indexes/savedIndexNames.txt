@@ -1,9 +1,0 @@
-INDEX VERSION 1.4+C:\Users\omsol\OneDrive\Desktop\MCA SEM 2\AOOT\AOOT_Practical\01_Practice_Programs\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2176609894.index
-2842704715.index
-1057040562.index
-1310342801.index
-2142222231.index
-3707847444.index
-1373860109.index
-756456019.index
