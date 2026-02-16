@@ -31,19 +31,19 @@ public class Addition extends HttpServlet {
 		int result = num1 + num2;
 		
 		 ServletConfig config = getServletConfig();
-	     String collegeName = config.getInitParameter("apage");
+	     String pName = config.getInitParameter("apage");
 
 	     ServletContext context = getServletContext();
 	     String uni = context.getInitParameter("university");
 
-	     response.getWriter().println(uni);
 	     
-	     response.getWriter().println("<html><body>");
-	     response.getWriter().println("<h2>Addition Result : " + result + "</h2>");
-	     response.getWriter().println("<h3>College : " + collegeName + "</h3>");
+	     out.println("<html><body>");
+	     out.println("<h1>Univercity : "+uni+"</h1>");
+	     out.println("<h2>Addition Result : " + result + "</h2>");
+	     out.println("<h3>Program : " + pName + "</h3>");
 	     
-	     response.getWriter().println("<a href='cal.html'>Back</a>");
-	     response.getWriter().println("</body></html>");
+	     out.println("<a href='cal.html'>Back</a>");
+	     out.println("</body></html>");
 		
 		
 		

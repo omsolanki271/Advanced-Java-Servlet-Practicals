@@ -86,20 +86,46 @@
 		<servlet-class>com.aoot.http.cal.Substraction</servlet-class>
 		
 		<init-param>
-			<param-name>value</param-name>
-			<param-value>10</param-value>
-		</init-param>
-		
-		<init-param>
-			<param-name>subinit</param-name>
-			<param-value>This is Substraction program</param-value>
-		</init-param>
+        	<param-name>spage</param-name>
+        	<param-value>Substraciton Page Run</param-value>
+    	</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Sub</servlet-name>
 		<url-pattern>/sub</url-pattern>
 	</servlet-mapping>
 	
+	<!-- Multiplication  -->
+	
+	<servlet>
+		<servlet-name>Mul</servlet-name>
+		<servlet-class>com.aoot.http.cal.Multiplication</servlet-class>
+		
+		<init-param>
+        	<param-name>mpage</param-name>
+        	<param-value>Multiplication Page Run</param-value>
+    	</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Mul</servlet-name>
+		<url-pattern>/multi</url-pattern>
+	</servlet-mapping>
 	
 	
+	<!-- Division  -->
+	
+	<servlet>
+		<servlet-name>Div</servlet-name>
+		<servlet-class>com.aoot.http.cal.Division</servlet-class>
+		
+		<init-param>
+        	<param-name>dpage</param-name>
+        	<param-value>Multiplication Page Run</param-value>
+    	</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Div</servlet-name>
+		<url-pattern>/div</url-pattern>
+	</servlet-mapping>
+		
 </web-app>

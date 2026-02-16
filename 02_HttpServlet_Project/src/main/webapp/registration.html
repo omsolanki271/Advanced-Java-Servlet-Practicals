@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registration Page</title>
+<style>
+body {
+	font-family: Arial;
+	padding: 20px;
+	background-color: #f2f2f2;
+}
+
+form {
+	max-width: 450px;
+	margin: auto;
+	padding: 20px;
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0 0 10px #ccc;
+}
+
+input, select {
+	width: 100%;
+	padding: 10px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+h2 {
+	text-align: center;
+}
+</style>
+</head>
+<body>
+
+	<h2>Register for Job</h2>
+
+	<form action="RegistrationServlet" method="post">
+		<input type="text" name="firstName" placeholder="First Name" required>
+		<input type="text" name="lastName" placeholder="Last Name" required>
+		<input type="text" name="username" placeholder="Username" required>
+		<input type="email" name="email" placeholder="Email" required>
+		<input type="password" name="password" placeholder="Password" required>
+		<input type="password" name="confirmPassword"
+			placeholder="Confirm Password" required> <input type="tel"
+			name="phone" placeholder="Phone Number" required> <label
+			for="dob">Date of Birth:</label> <input type="date" name="dob"
+			id="dob"> <input type="text" name="city" placeholder="City">
+
+		<input type="submit" value="Register">
+	</form>
+
+</body>
+</html>

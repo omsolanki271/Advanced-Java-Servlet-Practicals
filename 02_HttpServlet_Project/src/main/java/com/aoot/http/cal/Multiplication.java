@@ -11,32 +11,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@WebServlet("/Substraction")
-public class Substraction extends HttpServlet {
+
+//@WebServlet("/Multiplication")
+public class Multiplication extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public Substraction() {
-		super();
-
-	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-
+		
 		int num1 = Integer.parseInt(request.getParameter("no1"));
 		int num2 = Integer.parseInt(request.getParameter("no2"));
 
+		ServletConfig config = getServletConfig();
+		String pName = config.getInitParameter("mpage");
+		
 		ServletContext context = getServletContext();
 		String uni = context.getInitParameter("university");
-
-		ServletConfig config = getServletConfig();
-		String pName = config.getInitParameter("spage");
-
-		int result = num1 - num2;
-
+		
+		int result = num1 * num2;
+		
 		out.println("<html><body>");
 		out.println("<h1>Univercity : " + uni + "</h1>");
 		out.println("<h2>Addition Result : " + result + "</h2>");
@@ -44,12 +38,12 @@ public class Substraction extends HttpServlet {
 
 		out.println("<a href='cal.html'>Back</a>");
 		out.println("</body></html>");
-
+		
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		doGet(request, response);
 	}
 
