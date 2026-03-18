@@ -51,6 +51,7 @@ public class LoginServlet extends HttpServlet {
 
 				HttpSession session = req.getSession();
 				session.setAttribute("userEmail", email);
+				
 				Cookie cookie = new Cookie("userEmail", email);
 				cookie.setMaxAge(60 * 60);
 				res.addCookie(cookie);
