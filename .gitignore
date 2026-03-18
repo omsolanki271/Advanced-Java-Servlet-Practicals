@@ -1,6 +1,7 @@
 # Eclipse files
 .metadata/
 Servers/
+.settings/
 
 # Build files
 build/
@@ -20,3 +21,6 @@ Thumbs.db
 # Optional (recommended)
 *.war
 *.jar
+
+
+
