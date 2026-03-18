@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hire Hub - Register</title>
+
+<style>
+body {
+	font-family: Arial;
+	background: #f2f6ff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.container {
+	background: white;
+	padding: 30px;
+	width: 350px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+	text-align: center;
+	color: #2c3e50;
+}
+
+label {
+	font-weight: bold;
+}
+
+input, textarea {
+	width: 100%;
+	padding: 8px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+button {
+	width: 100%;
+	padding: 10px;
+	background: #2563eb;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
+button:hover {
+	background: #1e4ed8;
+}
+
+.login-link {
+	text-align: center;
+	margin-top: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: #2563eb;
+}
+</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h2>Hire Hub Registration</h2>
+
+		<form action="RegisterServlet" method="post">
+
+			<label>Full Name</label> <input type="text" name="fullname" required>
+
+			<label>Email</label> <input type="email" name="email" required>
+
+			<label>Password</label> <input type="password" name="password"
+				required> <label>Mobile Number</label>
+			<input type="number"
+				name="mobile"> <label>Address</label>
+			<textarea name="address" rows="3"></textarea>
+
+			<button type="submit">Register</button>
+
+		</form>
+
+		<div class="login-link">
+			<p>
+				Already have an account? <a href="login.html">Login</a>
+			</p>
+		</div>
+
+	</div>
+
+</body>
+</html>
