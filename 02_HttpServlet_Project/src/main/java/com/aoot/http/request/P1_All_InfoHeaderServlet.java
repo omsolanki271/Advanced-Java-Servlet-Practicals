@@ -1,4 +1,4 @@
-package com.aoot.http.project;
+package com.aoot.http.request;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/HeaderServlet")
-public class HeaderServlet extends HttpServlet {
+@WebServlet("/P1_All_InfoHeaderServlet")
+public class P1_All_InfoHeaderServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 

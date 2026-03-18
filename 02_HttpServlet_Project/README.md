@@ -1,7 +1,6 @@
 # HttpServlet Practicals
 
 ## Project
-02_HttpServlet_Project
 
 ## Description
 This project contains practical programs using **HttpServlet** in Advanced Java.  

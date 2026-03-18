@@ -1,6 +1,22 @@
+# Eclipse files
 .metadata/
 Servers/
+
+# Build files
 build/
+bin/
+out/
+
+# Compiled files
 *.class
+
+# Logs
 *.log
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Optional (recommended)
+*.war
+*.jar
