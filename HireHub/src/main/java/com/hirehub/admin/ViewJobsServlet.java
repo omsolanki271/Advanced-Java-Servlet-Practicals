@@ -61,7 +61,7 @@ public class ViewJobsServlet extends HttpServlet {
 			
 			rs = st.executeQuery("SELECT * FROM jobs");
 			
-			out.println("<a href='AdminDashboardServlet'>Go to Dashboard</a>");
+			out.println("<a href='AdminDashboard'>Go to Dashboard</a>");
 			out.println("<h2 style='display:flex;justify-content:center;'>Job List</h2>");
 			out.println("<table border='1'>");
 			out.println("<tr>"
@@ -89,7 +89,7 @@ public class ViewJobsServlet extends HttpServlet {
 				out.println("<td>" + rs.getString("type") + "</td>");
 				out.println("<td>");
 				out.println("<a href='editJob?id=" + id + "'>Edit</a>  | ");
-				out.println("<a href='deleteJob?id=" + id + "'>Delete</a>");
+				out.println("<a href='deleteJob?id=" + id + "' onclick=\"return confirm('Are you sure?')\">Delete</a>");
 				out.println("</td>");
 				out.println("</tr>");
 			}

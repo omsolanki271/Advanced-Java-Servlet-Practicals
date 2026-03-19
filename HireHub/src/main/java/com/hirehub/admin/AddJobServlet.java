@@ -43,7 +43,7 @@ public class AddJobServlet extends HttpServlet {
 			int i = ps.executeUpdate();
 
 			if (i > 0) {
-				res.sendRedirect("viewJobs.html");
+				res.sendRedirect("ViewJobsServlet");
 			}
 
 		} catch (Exception e) {
