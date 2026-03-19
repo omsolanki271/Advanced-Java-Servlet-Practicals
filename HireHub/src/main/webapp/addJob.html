@@ -3,8 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <title>Add Job | HireHub</title>
-
 <style>
+body {
+    font-family: Arial;
+}
+
+.container {
+    width: 400px;
+    margin: 50px auto;
+    border: 1px solid black;
+    padding: 15px;
+}
+
+input, textarea, select {
+    width: 100%;
+    margin: 5px 0;
+}
+
+button {
+    margin-top: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<a href="Adashboard.html"><=Dashboard</a>
+		
+		<h2>Add New Job</h2>
+		
+		<form action="AddJobServlet" method="post">
+
+			<label>Job Title</label> <input type="text" name="title" required>
+
+			<label>Company Name</label> <input type="text" name="company"
+				required> <label>Location</label> <input type="text"
+				name="location" required> <label>Salary</label> <input
+				type="text" name="salary"> <label>Job Type</label> <select
+				name="type">
+				<option value="Full Time">Full Time</option>
+				<option value="Part Time">Part Time</option>
+				<option value="Internship">Internship</option>
+				<option value="Remote">Remote</option>
+			</select> <label>Job Description</label>
+			<textarea name="description" rows="4"></textarea>
+
+			<button type="submit">Post Job</button>
+
+		</form>
+
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <style>
 body {
 	font-family: Arial;
 	background: #f4f6fb;
@@ -50,37 +115,4 @@ button {
 button:hover {
 	background: #1e40af;
 }
-</style>
-
-</head>
-
-<body>
-
-	<div class="container">
-
-		<h2>Add New Job</h2>
-
-		<form action="AddJobServlet" method="post">
-
-			<label>Job Title</label> <input type="text" name="title" required>
-
-			<label>Company Name</label> <input type="text" name="company"
-				required> <label>Location</label> <input type="text"
-				name="location" required> <label>Salary</label> <input
-				type="text" name="salary"> <label>Job Type</label> <select
-				name="type">
-				<option value="Full Time">Full Time</option>
-				<option value="Part Time">Part Time</option>
-				<option value="Internship">Internship</option>
-				<option value="Remote">Remote</option>
-			</select> <label>Job Description</label>
-			<textarea name="description" rows="4"></textarea>
-
-			<button type="submit">Post Job</button>
-
-		</form>
-
-	</div>
-
-</body>
-</html>
+</style> -->

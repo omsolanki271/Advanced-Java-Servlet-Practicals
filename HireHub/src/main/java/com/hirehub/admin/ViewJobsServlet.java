@@ -33,7 +33,8 @@ public class ViewJobsServlet extends HttpServlet {
 			
 			rs = st.executeQuery("SELECT * FROM jobs");
 			
-			out.println("<h2>Job List</h2>");
+			out.println("<a href=\"Adashboard.html\">Go to Dashboard</a>");
+			out.println("<h2 style='display:flex;justify-content:center;'>Job List</h2>");
 			out.println("<table border='1'>");
 			out.println("<tr>"
 						+ "<th>ID</th>"
@@ -84,5 +85,11 @@ public class ViewJobsServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		out.println("<style>");
+		out.println("body { font-family: Arial; }");
+		out.println("table { border-collapse: collapse; width: 70%; margin: auto; }");
+		out.println("th, td { border: 1px solid black; padding: 8px; text-align: center; }");
+		out.println("th { background-color: lightgray; }");
+		out.println("</style>");
 	}
 }
