@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet("/viewJobs")
+//@WebServlet("/ViewJobsServlet")
 public class ViewJobsServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -16,6 +18,32 @@ public class ViewJobsServlet extends HttpServlet {
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+
+		HttpSession session = request.getSession(false); 
+		
+		if (session == null || session.getAttribute("userEmail") == null) {
+			response.sendRedirect("login.html");
+			return;
+		}
+		
+		String email = (String) session.getAttribute("userEmail");
+		String sessionId = session.getId();
+
+		ServletContext context = getServletContext();
+		String webname = context.getInitParameter("webname");
+		
+		ServletConfig config = getServletConfig(); 
+		String name = config.getInitParameter("name");
+		
+		out.println("<html><body>");
+
+		out.println("<h2>"+webname+"</h2><p>ServletContext</p>");
+		out.println("<h3>"+name+" Dashboard</h3><p>ServletConfig</p>");
+		out.println("<p>Welcome: " + email + "</p>");
+		out.println("<p>Session ID: " + sessionId + "</p>");
+		out.println("<a href='logout'>Logout</a>");
+
+		out.println("<hr>");
 		
 		Connection conn = null;
 		Statement st = null;        
@@ -33,7 +61,7 @@ public class ViewJobsServlet extends HttpServlet {
 			
 			rs = st.executeQuery("SELECT * FROM jobs");
 			
-			out.println("<a href=\"Adashboard.html\">Go to Dashboard</a>");
+			out.println("<a href='AdminDashboardServlet'>Go to Dashboard</a>");
 			out.println("<h2 style='display:flex;justify-content:center;'>Job List</h2>");
 			out.println("<table border='1'>");
 			out.println("<tr>"

@@ -53,12 +53,11 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("userEmail", email);
 				session.setMaxInactiveInterval(1 * 60);
 				
-				
 				Cookie cookie = new Cookie("userEmail", email);
 				cookie.setMaxAge(1 * 60);
 				res.addCookie(cookie);
 				
-				res.sendRedirect("Adashboard.html");
+				res.sendRedirect("AdminDashboard");
 			}
 			else
 			{
@@ -107,4 +106,5 @@ public class LoginServlet extends HttpServlet {
 	}
 
 }
+
 

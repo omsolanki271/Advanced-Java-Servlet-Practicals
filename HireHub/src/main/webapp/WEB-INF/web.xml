@@ -11,4 +11,39 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.xhtml</welcome-file>
   </welcome-file-list>
+  
+  <context-param>
+  	<param-name>webname</param-name>
+  	<param-value>Hire Hub</param-value>
+  </context-param>
+  
+  
+  <!-- admin dashboard -->
+  <servlet>
+  	<servlet-name>Adashboard</servlet-name>
+  	<servlet-class>com.hirehub.admin.AdminDashboardServlet</servlet-class>
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>Admin</param-value>
+	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Adashboard</servlet-name>
+  	<url-pattern>/AdminDashboard</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- all job see here  -->
+  <servlet>
+  	<servlet-name>ViewJob</servlet-name>
+  	<servlet-class>com.hirehub.admin.ViewJobsServlet</servlet-class>
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>Manage Jobs</param-value>
+	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ViewJob</servlet-name>
+  	<url-pattern>/ViewJobsServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
