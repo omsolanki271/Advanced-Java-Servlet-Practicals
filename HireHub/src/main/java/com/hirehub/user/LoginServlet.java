@@ -1,6 +1,6 @@
 package com.hirehub.user;
 
-import java.awt.geom.Rectangle2D;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
@@ -51,16 +51,27 @@ public class LoginServlet extends HttpServlet {
 
 				HttpSession session = req.getSession();
 				session.setAttribute("userEmail", email);
+				session.setMaxInactiveInterval(1 * 60);
+				
 				
 				Cookie cookie = new Cookie("userEmail", email);
-				cookie.setMaxAge(60 * 60);
+				cookie.setMaxAge(1 * 60);
 				res.addCookie(cookie);
 				
 				res.sendRedirect("Adashboard.html");
 			}
 			else
 			{
-				out.println("<h3>Invalid Email or Password</h3>");
+				RequestDispatcher rd = req.getRequestDispatcher("login.html");
+				out = res.getWriter();
+
+				out.println("<script>");
+				out.println("document.addEventListener('DOMContentLoaded', function(){");
+				out.println("document.getElementById('errorMsg').innerText='Invalid Email or Password';");
+				out.println("});");
+				out.println("</script>");
+
+				rd.include(req, res);
 			}
 			
 		}
