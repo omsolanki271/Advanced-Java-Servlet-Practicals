@@ -37,6 +37,7 @@ public class ViewJobsServlet extends HttpServlet {
 		
 		out.println("<html><body>");
 
+
 		out.println("<h2>"+webname+"</h2><p>ServletContext</p>");
 		out.println("<h3>"+name+" Dashboard</h3><p>ServletConfig</p>");
 		out.println("<p>Welcome: " + email + "</p>");
@@ -62,6 +63,11 @@ public class ViewJobsServlet extends HttpServlet {
 			rs = st.executeQuery("SELECT * FROM jobs");
 			
 			out.println("<a href='AdminDashboard'>Go to Dashboard</a>");
+			String msg = (String) request.getAttribute("msg");
+
+			if(msg != null){
+			    out.println("<p style='color:green;'>" + msg + "</p>");
+			}
 			out.println("<h2 style='display:flex;justify-content:center;'>Job List</h2>");
 			out.println("<table border='1'>");
 			out.println("<tr>"
@@ -74,14 +80,14 @@ public class ViewJobsServlet extends HttpServlet {
 						+"<th>Action</th>"
 					+ "</tr>");
 
-			
+			int c = 1;
 			while (rs.next()) {   
 
 				out.println("<tr>");
 				
 				int id = rs.getInt("id");
 				
-				out.println("<td>" + rs.getInt("id") + "</td>");
+				out.println("<td>" + c++ + "</td>");
 				out.println("<td>" + rs.getString("title") + "</td>");
 				out.println("<td>" + rs.getString("company") + "</td>");
 				out.println("<td>" + rs.getString("location") + "</td>");
@@ -119,5 +125,10 @@ public class ViewJobsServlet extends HttpServlet {
 		out.println("th, td { border: 1px solid black; padding: 8px; text-align: center; }");
 		out.println("th { background-color: lightgray; }");
 		out.println("</style>");
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	        throws ServletException, IOException {
+
+	    doGet(request, response);
 	}
 }

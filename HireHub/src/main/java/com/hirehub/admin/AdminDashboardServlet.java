@@ -48,6 +48,8 @@ public class AdminDashboardServlet extends HttpServlet {
 		out.println("<a href='AdminDashboard'>Dashboard</a><br><br>");
 		out.println("<a href='addJob.html'>Add Job</a><br><br>");
 		out.println("<a href='ViewJobsServlet'>Manage Jobs</a><br><br>");
+		out.println("<a href='companies'>All company name</a><br><br>");
+		out.println("<a href='ViewCookies'>My all cookies</a><br><br>");
 		
 
 		out.println("</body></html>");

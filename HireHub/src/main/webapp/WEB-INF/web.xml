@@ -1,49 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>HireHub</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.xhtml</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.xhtml</welcome-file>
-  </welcome-file-list>
-  
-  <context-param>
-  	<param-name>webname</param-name>
-  	<param-value>Hire Hub</param-value>
-  </context-param>
-  
-  
-  <!-- admin dashboard -->
-  <servlet>
-  	<servlet-name>Adashboard</servlet-name>
-  	<servlet-class>com.hirehub.admin.AdminDashboardServlet</servlet-class>
-  	<init-param>
-  		<param-name>name</param-name>
-  		<param-value>Admin</param-value>
-	</init-param>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>Adashboard</servlet-name>
-  	<url-pattern>/AdminDashboard</url-pattern>
-  </servlet-mapping>
-  
-  
-  <!-- all job see here  -->
-  <servlet>
-  	<servlet-name>ViewJob</servlet-name>
-  	<servlet-class>com.hirehub.admin.ViewJobsServlet</servlet-class>
-  	<init-param>
-  		<param-name>name</param-name>
-  		<param-value>Manage Jobs</param-value>
-	</init-param>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>ViewJob</servlet-name>
-  	<url-pattern>/ViewJobsServlet</url-pattern>
-  </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>HireHub</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.xhtml</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.xhtml</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>webname</param-name>
+		<param-value>Hire Hub</param-value>
+	</context-param>
+
+
+	<!-- admin dashboard -->
+	<servlet>
+		<servlet-name>Adashboard</servlet-name>
+		<servlet-class>com.hirehub.admin.AdminDashboardServlet</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>Admin</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Adashboard</servlet-name>
+		<url-pattern>/AdminDashboard</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- all job see here -->
+	<servlet>
+		<servlet-name>ViewJob</servlet-name>
+		<servlet-class>com.hirehub.admin.ViewJobsServlet</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>Manage Jobs</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewJob</servlet-name>
+		<url-pattern>/ViewJobsServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>EditJob</servlet-name>
+		<servlet-class>com.hirehub.admin.EditJobServlet</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>Update Jobs</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditJob</servlet-name>
+		<url-pattern>/editJob</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- all cookies  -->
+	<servlet>
+		<servlet-name>cookies</servlet-name>
+		<servlet-class>com.hirehub.admin.ViewCookies</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>All Cookies List</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cookies</servlet-name>
+		<url-pattern>/ViewCookies</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- my collable -->
+	<servlet>
+		<servlet-name>callable</servlet-name>
+		<servlet-class>com.hirehub.common.CompanyServlet</servlet-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>Company List</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>callable</servlet-name>
+		<url-pattern>/companies</url-pattern>
+	</servlet-mapping>
 </web-app>
+
+
+

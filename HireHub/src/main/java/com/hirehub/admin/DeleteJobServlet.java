@@ -26,7 +26,7 @@ public class DeleteJobServlet extends HttpServlet {
 		try {
 			id = Integer.parseInt(id1);
 		} catch (Exception e) {
-			response.sendRedirect("viewJobs");
+			response.sendRedirect("ViewJobsServlet");
 			return;
 		}
 
